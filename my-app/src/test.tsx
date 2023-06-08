@@ -1,9 +1,10 @@
 import React from 'react';
-
-export default class AppTest extends React.Component{
+import Child from './childtest.tsx';
+export default class AppTest extends React.Component {
 
   render() {
-    return <h1>Hello, World!</h1>;
+    return <h1>Hello, World!<Child /></h1>
+    ;
   }
 
 }

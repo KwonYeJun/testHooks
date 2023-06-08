@@ -1,19 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AppTest from './test.tsx';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-    <AppTest />
-  </React.StrictMode>
-);
+const RootComponent = () => {
+  const [test, setTest] = useState('지금 데이터');
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+  return (
+    <React.StrictMode>
+      <App />
+      <AppTest message = {test}/>
+    </React.StrictMode>
+  );
+};
+
+ReactDOM.render(<RootComponent />, document.getElementById('root'));
+
 reportWebVitals();

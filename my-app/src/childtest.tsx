@@ -1,25 +1,20 @@
-import React from "react";
+import React, { useState,useContext } from "react";
+import {TestContext} from './conText.tsx';
 
 interface ChildTestProps {
   name: string;
 }
 
-interface ChildTestState {
-  testName: string;
-}
+const ChildTest: React.FC<ChildTestProps> = () => {
+  const { first } = useContext(TestContext);
+  console.log(first);
+  const [testName, setTestName] = useState(first);
 
-export default class ChildTest extends React.Component<ChildTestProps, ChildTestState> {
-  constructor(props: ChildTestProps) {
-    super(props);
-    this.state = {
-      testName: props.name
-    };
-  }
-
-  render(): React.ReactNode {
-    const { testName } = this.state;
-    return <div>
+  return (
+    <div>
       child 입니다. {testName}을 전달받았습니다.
-    </div>;
-  }
-}
+    </div>
+  );
+};
+
+export default ChildTest;

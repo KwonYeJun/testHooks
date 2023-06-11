@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-export default function count(){
+export default function Count(){
 const [test, settest] = useState(1);
 const countAdd = () => {
 settest(test + 1);

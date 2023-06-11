@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Child from './childtest.tsx';
-import { TestContext } from './conText.tsx';
+import Child from './childtest';
+import { TestContext } from './conText';
 
 interface FirstProps {
   message: string;
@@ -14,7 +14,7 @@ const First: React.FC<FirstProps> = ({ message }) => {
     <h1>
       first 입니다. {message}
       <TestContext.Provider value={{ test, setTest,first }}>
-        <Child />
+        <Child name={'asdf'} />
       </TestContext.Provider>
     </h1>
   );

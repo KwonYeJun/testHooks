@@ -1,5 +1,5 @@
 import React, { useState,useContext } from "react";
-import {TestContext} from './conText.tsx';
+import {TestContext} from './conText';
 
 interface ChildTestProps {
   name: string;

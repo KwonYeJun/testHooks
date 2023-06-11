@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 interface testType {
-  props : string
+  props : boolean
 }
 
-const cleanUp = (props : testType) => {
+const Timer = (props : testType) => {
   const [state, setState] = useState<string>(''); // 예시로 state의 타입을 string으로 지정했습니다.
 
   useEffect(() =>{
@@ -12,6 +12,11 @@ const cleanUp = (props : testType) => {
     const timer = setInterval(() => {
       console.log("timer 돌아가는중..");
     }, 1000);
+    return () => {
+      // 정리할 내용이 들어간다.
+      clearInterval(timer);
+      console.log("timer가 종료 됩니다.");
+    }
   },[]);
 
   useEffect(() => {
@@ -25,4 +30,4 @@ const cleanUp = (props : testType) => {
   );
 }
 
-export default cleanUp;
+export default Timer;

@@ -4,13 +4,15 @@ import './index.css';
 // import App from './App';
 import AppTest from './test';
 import Count from './count';
-
+import Timer from './timer';
 const RootComponent = () => {
-
+  const [showTimer, setShowTimer] = useState(false);
 
   return (
     <div>
-      {/* <App /> */}
+      
+      {showTimer && <Timer props = {showTimer}/>}
+      <button onClick={() => {setShowTimer(!showTimer)}}>Toggle Timer</button>
       <AppTest message='asdf'/>
       <Count />
     </div>
